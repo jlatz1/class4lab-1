@@ -41,10 +41,10 @@ public class AreaController extends HttpServlet {
         // so long as it's a JSP or Servlet
       
                 
-           RequestDispatcher view =
-                request.getRequestDispatcher(AREA_PAGE);
+        RequestDispatcher view =
+        request.getRequestDispatcher(AREA_PAGE);
         view.forward(request, response);
-          }
+    }
 
     
 
