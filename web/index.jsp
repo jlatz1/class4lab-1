@@ -65,7 +65,7 @@ Width: <input type="text" name="width">
                     alert("side cannot be null; close but no cigar");
                 }
                 else{
-                    return areaOfCircle;
+                    return thirdSide;
                 }
             }
             </script>
