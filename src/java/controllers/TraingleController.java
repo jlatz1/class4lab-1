@@ -33,14 +33,7 @@ public class TraingleController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Traingle t = new Traingle();
-        double thirdSide = t.getThirdSide();
-        request.setAttribute("thirdSide", thirdSide);
-     
        
-         RequestDispatcher view =
-                request.getRequestDispatcher(DESTINATION);
-        view.forward(request, response);
         
         
      
@@ -74,6 +67,15 @@ public class TraingleController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+         Traingle t = new Traingle();
+        double thirdSide = t.getThirdSide();
+        request.setAttribute("thirdSide", thirdSide);
+     
+       
+         RequestDispatcher view =
+        request.getRequestDispatcher(DESTINATION);
+        view.forward(request, response);
         processRequest(request, response);
     }
 
