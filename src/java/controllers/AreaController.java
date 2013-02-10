@@ -32,20 +32,10 @@ public class AreaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Area a = new Area();
-        double area = a.getArea();
-        request.setAttribute("area", area);
-        // Now can forward the request and response objects to the destination page,
-        // so long as it's a JSP or Servlet
-      
-                
-        RequestDispatcher view =
-        request.getRequestDispatcher(DESTINATION);
-        view.forward(request, response);
-    }
+   
 
     
-
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP
@@ -61,6 +51,7 @@ public class AreaController extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
+    
 
     /**
      * Handles the HTTP
@@ -74,8 +65,20 @@ public class AreaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                
+        Area a = new Area();
+        double area = a.getArea();
+        request.setAttribute("area", area);
+        // Now can forward the request and response objects to the destination page,
+        // so long as it's a JSP or Servlet
+      
+                
+        RequestDispatcher view =
+        request.getRequestDispatcher(DESTINATION);
+        view.forward(request, response);
+    
         processRequest(request, response);
-    }
+}
 
     /**
      * Returns a short description of the servlet.
