@@ -67,7 +67,7 @@ public class AreaCircleController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          AreaCircle ac = new AreaCircle();
+        AreaCircle ac = new AreaCircle();
         double areaCircle = ac.getAreaOfCircle();
         request.setAttribute("areaCircle", areaCircle);
        

@@ -63,7 +63,7 @@
            
             
         </form>
-        
+        <h2>Hypotenuse of a Triangle</h2>
         <%-- this form is for the third side of a triangle --%>
          <form id="TriangleForm" name="triangleForm" method="POST" action="TraingleController">
             a: <input type="text" name="a"/><br>

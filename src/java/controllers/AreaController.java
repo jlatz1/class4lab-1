@@ -5,6 +5,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -65,17 +66,19 @@ public class AreaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                
+        PrintWriter out = response.getWriter(); 
         Area a = new Area();
         double area = a.getArea();
         request.setAttribute("area", area);
+        out.println(area);
+        
         // Now can forward the request and response objects to the destination page,
         // so long as it's a JSP or Servlet
       
                 
-        RequestDispatcher view =
-        request.getRequestDispatcher(DESTINATION);
-        view.forward(request, response);
+       // RequestDispatcher view =
+        //request.getRequestDispatcher(DESTINATION);
+       // view.forward(request, response);
     
         processRequest(request, response);
 }
