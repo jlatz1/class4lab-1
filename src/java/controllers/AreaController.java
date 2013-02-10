@@ -69,16 +69,17 @@ public class AreaController extends HttpServlet {
         PrintWriter out = response.getWriter(); 
         Area a = new Area();
         double area = a.getArea();
+        request.getParameter("area");
         request.setAttribute("area", area);
-        out.println(area);
+       
         
         // Now can forward the request and response objects to the destination page,
         // so long as it's a JSP or Servlet
       
                 
-       // RequestDispatcher view =
-        //request.getRequestDispatcher(DESTINATION);
-       // view.forward(request, response);
+       RequestDispatcher view =
+       request.getRequestDispatcher(DESTINATION);
+       view.forward(request, response);
     
         processRequest(request, response);
 }
