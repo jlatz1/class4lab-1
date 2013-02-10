@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.math.*;
+import javaclasses.Traingle;
 
 /**
  *
@@ -19,7 +19,7 @@ import java.math.*;
  */
 @WebServlet(name = "TraingleController", urlPatterns = {"/TraingleController"})
 public class TraingleController extends HttpServlet {
-    private static final String TRAINGLE_PAGE = "Traingle.java";
+    private static final String DESTINATION = "/answer.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -33,18 +33,13 @@ public class TraingleController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        double a = Double.valueOf(request.getParameter("a"));
-        request.setAttribute("a", a);
-        double b = Double.valueOf(request.getParameter("b"));
-        request.setAttribute("b", b);
-        double c = Double.valueOf(request.getParameter("c"));
-        request.setAttribute("c", c);
-        
-        double thirdSide = this.getThirdSide(a, b, c);
+        Traingle t = new Traingle();
+        double thirdSide = t.getThirdSide();
+        request.setAttribute("thirdSide", thirdSide);
+     
        
          RequestDispatcher view =
-                request.getRequestDispatcher(TRAINGLE_PAGE);
+                request.getRequestDispatcher(DESTINATION);
         view.forward(request, response);
         
         
@@ -93,8 +88,4 @@ public class TraingleController extends HttpServlet {
     }// </editor-fold>
     
     
-      public double getThirdSide(double a, double b, double c){
-        double thirdSide = Math.sqrt((a * a) + (b * b));
-        return thirdSide;
-    }
 }

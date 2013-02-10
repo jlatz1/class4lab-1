@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javaclasses.AreaCircle;
 
 /**
  *
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "AreaCircleController", urlPatterns = {"/AreaCircleController"})
 public class AreaCircleController extends HttpServlet {
-       private static final String AREA_CIRCLE_PAGE = "AreaCircle.java";
+       private static final String DESTINATION = "/answer.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -33,13 +34,12 @@ public class AreaCircleController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-               double radius = Double.valueOf(request.getParameter("radius"));
-       request.setAttribute("radius", (radius));
-       double pi = 3.14159265359;
-       request.setAttribute("pi", pi);
-       double areaOfCircle = this.getAreaOfCircle(radius, pi);
+        AreaCircle ac = new AreaCircle();
+        double areaCircle = ac.getAreaOfCircle();
+        request.setAttribute("areaCircle", areaCircle);
+       
         RequestDispatcher view =
-                request.getRequestDispatcher(AREA_CIRCLE_PAGE);
+                request.getRequestDispatcher(DESTINATION);
         view.forward(request, response);
        
     }
@@ -86,8 +86,5 @@ public class AreaCircleController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
     
-    public double getAreaOfCircle(double radius, double pi){
-    
-        return radius * (pi * pi);
-    }
+   
 }

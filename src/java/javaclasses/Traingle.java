@@ -9,10 +9,9 @@ import java.math.*;
  * @author Jessie
  */
 public class Traingle {
-    private double a;
-    private double b;
-    private double c;
-    
+   private double a;
+   private double b;
+   private double thirdSide;
 
     /**
      * @return the a
@@ -43,23 +42,20 @@ public class Traingle {
     }
 
     /**
-     * @return the c
+     * @return the thirdSide
      */
-    public double getC() {
-        
-        return c;
+    public double getThirdSide() { 
+        thirdSide = Math.sqrt((a * a) + (b * b));
+        return thirdSide;
     }
 
     /**
-     * @param c the c to set
+     * @param thirdSide the thirdSide to set
      */
-    public void setC(double c) {
-        this.c = c;
+    public void setThirdSide(double thirdSide) {
+        this.thirdSide = thirdSide;
     }
-    private double getThirdSide(double c){
-      
-       c = Math.sqrt((a * a) + (b * b));
-       return c;
-    }
+
+   
     
 }

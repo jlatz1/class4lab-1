@@ -11,14 +11,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javaclasses.Area;
 /**
  *
  * @author Jessie
  */
 @WebServlet(name = "AreaController", urlPatterns = {"/AreaController"})
 public class AreaController extends HttpServlet {
-      private static final String AREA_PAGE = "Area.java";
+      private static final String DESTINATION = "/answer.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -32,17 +32,15 @@ public class AreaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        double length = Double.valueOf(request.getParameter("length"));
-        request.setAttribute("length", (length));
-        double width = Double.valueOf(request.getParameter("width"));
-        request.setAttribute("width", width);
-        double area = this.getArea(length, width);
+        Area a = new Area();
+        double area = a.getArea();
+        request.setAttribute("area", area);
         // Now can forward the request and response objects to the destination page,
         // so long as it's a JSP or Servlet
       
                 
         RequestDispatcher view =
-        request.getRequestDispatcher(AREA_PAGE);
+        request.getRequestDispatcher(DESTINATION);
         view.forward(request, response);
     }
 
@@ -89,10 +87,5 @@ public class AreaController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
     
-/**
-     * @return the area
-     */
-    public double getArea(double length, double width) {
-        return length * width;
-    }
+
 }
