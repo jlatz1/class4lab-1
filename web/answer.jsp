@@ -9,9 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Answer Page!</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Here is the area of a rectangle!!</h1>
+        
+         <% 
+      Object oArea = request.getAttribute("area");
+      if(oArea != null){
+          out.println("The area is: " + oArea);
+          
+      }else{
+          out.println("Cannot be null!! Close, but no cigar!!");
+      }
+      %>
+      <p> <a href="index.jsp">Back to calculator home</a></p>
     </body>
 </html>

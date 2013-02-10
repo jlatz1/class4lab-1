@@ -19,7 +19,7 @@ import javaclasses.AreaCircle;
  */
 @WebServlet(name = "AreaCircleController", urlPatterns = {"/AreaCircleController"})
 public class AreaCircleController extends HttpServlet {
-       private static final String DESTINATION = "/answer.jsp";
+       private static final String DESTINATION = "/circleanswer.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
