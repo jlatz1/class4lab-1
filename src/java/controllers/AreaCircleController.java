@@ -71,7 +71,7 @@ public class AreaCircleController extends HttpServlet {
         PrintWriter out = response.getWriter(); 
         AreaCircle ac = new AreaCircle();
         double areaCircle = ac.getAreaOfCircle();
-        //request.getParameter("areaCircle");
+        request.getParameter("areaCircle");
         request.setAttribute("areaCircle", areaCircle);
         out.println(areaCircle);
         RequestDispatcher view =
