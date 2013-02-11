@@ -74,7 +74,7 @@ public class TraingleController extends HttpServlet {
         request.setAttribute("thirdSide", thirdSide);
      
        
-         RequestDispatcher view =
+        RequestDispatcher view =
         request.getRequestDispatcher(DESTINATION);
         view.forward(request, response);
         processRequest(request, response);
