@@ -5,6 +5,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,11 +34,12 @@ public class AreaCircleController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            AreaCircle ac = new AreaCircle();
+        PrintWriter out = response.getWriter(); 
+        AreaCircle ac = new AreaCircle();
         double areaCircle = ac.getAreaOfCircle();
         //request.getParameter("areaCircle");
         request.setAttribute("areaCircle", areaCircle);
-       
+        out.println(areaCircle);
         RequestDispatcher view =
         request.getRequestDispatcher(DESTINATION);
         view.forward(request, response);
