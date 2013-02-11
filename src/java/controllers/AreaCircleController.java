@@ -34,17 +34,7 @@ public class AreaCircleController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter(); 
-        AreaCircle ac = new AreaCircle();
-        double areaCircle = ac.getAreaOfCircle();
-        //request.getParameter("areaCircle");
-        request.setAttribute("areaCircle", areaCircle);
-        out.println(areaCircle);
-        RequestDispatcher view =
-        request.getRequestDispatcher(DESTINATION);
-        view.forward(request, response);
-        
-        processRequest(request, response);
+    
       
        
     }
@@ -78,7 +68,17 @@ public class AreaCircleController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
+        PrintWriter out = response.getWriter(); 
+        AreaCircle ac = new AreaCircle();
+        double areaCircle = ac.getAreaOfCircle();
+        //request.getParameter("areaCircle");
+        request.setAttribute("areaCircle", areaCircle);
+        out.println(areaCircle);
+        RequestDispatcher view =
+        request.getRequestDispatcher(DESTINATION);
+        view.forward(request, response);
+        
+        processRequest(request, response);
     }
 
     /**
