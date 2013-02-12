@@ -67,9 +67,18 @@ public class AreaController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter(); 
+        String length = request.getParameter("length");
+        double dLen = Double.valueOf(length);
+        String width = request.getParameter("width");
+        double dWid = Double.valueOf(width);
+        
+        
         Area a = new Area();
+        a.setLength(dLen);
+        a.setWidth(dWid);
+        
         double area = a.getArea();
-        request.getParameter("area");
+
         request.setAttribute("area", area);
        
         
