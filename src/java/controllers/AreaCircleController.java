@@ -69,6 +69,7 @@ public class AreaCircleController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
+        try{
         String radius = request.getParameter("radius");
         double dRad = Double.valueOf(radius);
         String pi = request.getParameter("pi");
@@ -87,6 +88,9 @@ public class AreaCircleController extends HttpServlet {
         view.forward(request, response);
         
         processRequest(request, response);
+        }catch(NullPointerException ne){
+            out.println("It's null!! Close, but no cigar!!");
+        }
     }
 
     /**
