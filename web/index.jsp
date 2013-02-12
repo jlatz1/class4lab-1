@@ -11,22 +11,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Shapes!</title>
          <script type="text/javascript">
-        function getArea(){
+        function ValidateArea(){
                 if(length == null || length < 0){
                     alert("please enter a valid length");
-                    
+                    return false;
                 }
                else if(width == null || length < 0){
                     alert("please enter a valid width; close but no cigar!!!");
+                    return false;
                 }else{
-                return area;
+                return true;
             }
            }
-             function getAreaOfCircle(){
+             function ValidateAreaOfCircle(){
                 if(radius == null || radius < 0){
                     alert("Radius cannot be null; close but no cigar!!!");
+                    return false;
                 }else{
-                    return areaOfCircle;
+                    return true;
                 }
            
              function getThirdSide(){
