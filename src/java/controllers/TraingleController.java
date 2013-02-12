@@ -67,10 +67,17 @@ public class TraingleController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String a = request.getParameter("a");
+        double dA = Double.valueOf(a);
+        String b = request.getParameter("b");
+        double dB = Double.valueOf(b);
+        
         
         Traingle t = new Traingle();
+        t.setA(dA);
+        t.setB(dB);
         double thirdSide = t.getThirdSide();
-        request.getParameter("thirdSide");
+        
         request.setAttribute("thirdSide", thirdSide);
      
        
