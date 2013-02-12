@@ -31,14 +31,16 @@
                     return true;
                 }
            
-             function getThirdSide(){
+             function ValidateThirdSide(){
                  if(a == null || a < 0){
                     alert("side cannot be null; close but no cigar!!!");
+                    return false;
                 }else if(b == null || b < 0){
                     alert("side cannot be null; close but no cigar");
+                    return false;
                 }
                 else{
-                    return thirdSide;
+                    return true;
                 }
             }
            
@@ -49,7 +51,7 @@
             
               <%-- this form is for the area of a rectangle --%>
         
-    <form id="RectForm" name="rectForm" method="POST" action="AreaController">
+    <form id="RectForm" name="rectForm" method="POST" action="AreaController" onsubmit="return ValidateArea">
     Length: <input type="text" name="length"/></br>
     Width: <input type="text" name="width"/>
     <input type="submit" name="calculate" value="calculate"/>
@@ -58,7 +60,7 @@
      </form>
               <h2>Area of Circle</h2>
                    <%-- this form is for the area of a circle --%>
-        <form id="CircleForm" name="circleForm" method="POST" action="AreaCircleController">
+        <form id="CircleForm" name="circleForm" method="POST" action="AreaCircleController" onsubmit="return ValidateAreaOfCircle">
         Radius: <input type="text" name="radius"/>
             
         <input type="submit" name="calculate" value="calculate"/>
@@ -67,7 +69,7 @@
         </form>
         <h2>Hypotenuse of a Triangle</h2>
         <%-- this form is for the third side of a triangle --%>
-         <form id="TriangleForm" name="triangleForm" method="POST" action="TraingleController">
+         <form id="TriangleForm" name="triangleForm" method="POST" action="TraingleController" onsubmit="return ValidateThirdSide">
             a: <input type="text" name="a"/><br>
             b: <input type="text" name="b"/>
             <input type="submit" name="calculate" value="calculate"/> 
