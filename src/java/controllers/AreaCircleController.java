@@ -78,9 +78,9 @@ public class AreaCircleController extends HttpServlet {
         AreaCircle ac = new AreaCircle();
         ac.setRadius(dPi);
         ac.setPi(dPi);
-        double areaCircle = ac.getAreaOfCircle();
-        request.setAttribute("areaCircle", areaCircle);
-        out.println(areaCircle);
+        double areaOfCircle = ac.getAreaOfCircle();
+        request.setAttribute("areaOfCircle", areaOfCircle);
+        
         
         RequestDispatcher view =
         request.getRequestDispatcher(DESTINATION);
