@@ -72,13 +72,13 @@ public class AreaCircleController extends HttpServlet {
         try{
         String radius = request.getParameter("radius");
         double dRad = Double.valueOf(radius);
-        String pi = request.getParameter("pi");
-        double dPi = Double.valueOf(pi);
+        final double PI = 3.14;
+        
         
         
         AreaCircle ac = new AreaCircle();
-        ac.setRadius(dPi);
-        ac.setPi(dPi);
+        ac.setRadius(dRad);
+        ac.setPi(PI);
         double areaOfCircle = ac.getAreaOfCircle();
         request.setAttribute("areaOfCircle", areaOfCircle);
         
