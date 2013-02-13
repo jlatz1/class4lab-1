@@ -19,7 +19,7 @@ import javaclasses.Traingle;
  */
 @WebServlet(name = "TraingleController", urlPatterns = {"/TraingleController"})
 public class TraingleController extends HttpServlet {
-    private static final String DESTINATION = "/trianglesoution.jsp";
+    private static final String DESTINATION = "/index.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and

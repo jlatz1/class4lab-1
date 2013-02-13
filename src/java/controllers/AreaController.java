@@ -19,7 +19,7 @@ import javaclasses.Area;
  */
 @WebServlet(name = "AreaController", urlPatterns = {"/AreaController"})
 public class AreaController extends HttpServlet {
-      private static final String DESTINATION = "/answer.jsp";
+      private static final String DESTINATION = "/index.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
