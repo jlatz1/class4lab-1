@@ -58,7 +58,10 @@
     <input type="submit" name="calculate" value="calculate"/>
     
     
-                  <% 
+  
+ 
+     </form>
+                         <% 
       Object oArea = request.getAttribute("area");
       if(oArea != null){
           out.println("The area is: " + oArea);
@@ -67,9 +70,7 @@
           out.println("Cannot be null!! Close, but no cigar!!");
       }
       %>
-      <p>answer:</p>
- 
-     </form>
+      <p>answer:</p>     
               <h2>Area of Circle</h2>
                    <%-- this form is for the area of a circle --%>
         <form id="CircleForm" name="circleForm" method="POST" action="AreaCircleController" onsubmit="return ValidateAreaOfCircle()">
@@ -77,7 +78,11 @@
             
         <input type="submit" name="calculate" value="calculate"/>
            
-          <% Object oCircle = request.getAttribute("areaOfCircle");
+      
+    
+        </form>
+        
+            <% Object oCircle = request.getAttribute("areaOfCircle");
       if(oCircle != null){
           out.println("The area of the circle is: " + oCircle);
       }else{
@@ -85,8 +90,6 @@
       }
       %>
       <p>answer:</p>
-    
-        </form>
         <h2>Hypotenuse of a Triangle</h2>
         <%-- this form is for the third side of a triangle --%>
          <form id="TriangleForm" name="triangleForm" method="POST" action="TraingleController" onsubmit="return ValidateThirdSide()">
@@ -94,7 +97,10 @@
             b: <input type="text" name="b"/>
             <input type="submit" name="calculate" value="calculate"/> 
           
-                       <%
+     
+        
+        </form>
+                        <%
       Object oThird = request.getAttribute("thirdSide");
       if(oThird != null){
           out.println("The hypotenuse is: " + oThird);
@@ -104,9 +110,6 @@
       
       %>
       <p>answer:</p>
-        
-        </form>
-      
     
         
            
